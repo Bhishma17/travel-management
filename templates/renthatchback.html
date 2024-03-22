@@ -1,0 +1,100 @@
+{% extends 'Navbar.html' %}
+{% load static %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% block body %}
+<div class="container">
+  <div class="row">
+    <div  align="center" class="col card border-success">
+        <br>
+        <img class="card-img-top" src="{% static 'images/hatch2.png' %}" alt="Card image cap" width="150" height="200">
+        <br><br>
+        <form method="post" action="{% url 'rentcarlogic' %}">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="location1">Location:</label>
+                <input type="text" id="location1" name="location1">
+            </div>
+
+            <div class="form-group">
+                <label for="from_date_value">From Date:</label>
+                <input type="date" id="from_date_value" name="from_date_value">
+            </div>
+
+            <div class="form-group">
+                <label for="to_date_value">To Date:</label>
+                <input type="date" id="to_date_value" name="to_date_value">
+            </div>
+
+            <button type="submit" name = 'button_type' value="rent_now">Rent Now</button>
+        </form>
+        <br>
+        <h4>Welcome to Deepak's Travel Tourism and Management</h4>
+    </div>
+
+    <div align="center" class="col">
+        <h2>FARE DETAILS</h2>
+        <label style="display: block; margin-top: 10px;">Base Price (Charges 2000rs/day):</label> {{ Base_Price }}
+        <label style="display: block; margin-top: 10px;">Driver Allowance:</label> {{ Driver_Allowance }}
+        <label style="display: block; margin-top: 10px;">GST:</label> {{ GST }}
+        <label style="display: block; margin-top: 10px;">Total Fare:</label> {{ Total_Fare }}
+        <br><br><br><br>
+
+        <form method="post" action="{% url 'generate_qr_code'  %}">
+            {% csrf_token %}
+            <div class="d-grid gap-2">
+
+                <button class="btn btn-primary" name = 'button_type' value="proceed_to_payment" type="submit">Proceed to Payment</button>
+            </div>
+        </form>
+    </div>
+
+  </div>
+</div>
+
+<style>
+    .form-group {
+        margin-bottom: 10px;
+    }
+
+    label {
+        display: inline-block;
+        width: 100px; /* Adjust the width as needed */
+    }
+
+    input {
+        width: 200px; /* Adjust the width as needed */
+    }
+
+    .col {
+        text-align: center;
+        margin-top: 20px;
+        border: 2px solid #ccc;
+        border-radius: 8px;
+        padding: 20px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    h2 {
+        margin-bottom: 15px;
+    }
+
+    label {
+        display: inline-block;
+        width: 200px; /* Adjust the width as needed */
+        margin-bottom: 10px;
+    }
+
+    /* Optional: Adjust the margin between label and content */
+    .col label, .col span {
+        margin-right: 10px;
+    }
+</style>
+{% endblock %}
+</body>
+</html>

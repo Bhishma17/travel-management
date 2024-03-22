@@ -1,0 +1,27 @@
+{% extends 'Navbar.html' %}
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+{% block body %}
+<div class="container">
+  <div class="row">
+    <div  align="center" class="col">
+        <br> <br>
+      <h1>Welcome to Deepak's Travel Tourism and Management</h1>
+<form  method = 'post' action="{% url 'randomotp1' %}">
+    {% csrf_token %}
+     <input type="text" name="input1" placeholder="Enter a number less than 10">
+    <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+    </div>
+      <div  align="center" class="col">
+        <h1>Top Vacation Destinations</h1>
+          <br><br>
+          <h1>Generated OTP: {{ result_str }}</h1>
+      </div></div>
+</div>
+{% endblock %}
+</html>

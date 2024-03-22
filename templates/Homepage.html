@@ -1,0 +1,54 @@
+{% extends 'Navbar.html' %}
+{% load static %}
+<html lang="en">
+<head>
+    <title></title>
+</head>
+{% block body %}
+<div class="container">
+  <div class="row">
+    <div  align="center" class="col">
+        <br>
+        <br>
+        <br><br>
+        <br><br><br><br>
+        <img src = "{% static 'images/klu.png' %}" alt="My image" width="290" height="200"/>
+        <br> <br>
+      <h1>Welcome to BHISHMA's Travel Tourism and Management</h1>
+
+    </div>
+      <div  align="center" class="col">
+        <h1>Top Vacation Destinations</h1>
+          <br><br>
+          <div class="row">
+  <div class="col-sm-6">
+          <div class="card border-primary border-4" style="width: 18rem;" >
+  <img src="{% static 'images/chennai.jpg' %}" class="card-img-top" alt="...">
+  <div class="card-body">
+    <p class="card-text">Explore Chennai</p>
+  </div>
+</div>
+  </div>
+          <br><br>
+               <div class="col-sm-6">
+          <div class="card border-primary border-4" style="width: 18rem;" >
+  <img src="{% static 'images/delhi.jpg' %}" class="card-img-top" alt="...">
+  <div class="card-body">
+    <p class="card-text">Explore Delhi</p>
+  </div>
+</div>
+               </div>
+      </div>
+  </div>
+</div>
+</div>
+
+<br><br><br>
+<center>
+    <div class="d-grid gap-2 col-6 mx-auto">
+<button type="button" class="btn btn-primary btn-lg">Explore More Travel Packages</button>
+    </div>
+    </center>
+<br><br><br><br><br><br>
+{% endblock %}
+</html>

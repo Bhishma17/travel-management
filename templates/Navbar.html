@@ -1,0 +1,118 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+  <style>
+        /* Your custom styles go here */
+        .navbar {
+            font-size: 18px;
+            color: white;  /* Adjust the font size as needed */
+        }
+
+        .navbar-brand,
+        .navbar-nav .nav-link {
+            font-size: 18px; /* Adjust the font size as needed */
+            font-weight: bold;
+            color: white;
+
+        }
+    </style>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #cb0909;">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="{% url 'home1' %}">TTM</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="{% url 'home1' %}">Home</a>
+        </li>
+          <li class="nav-item">
+          <a class="nav-link" href="#">Favourite Destination</a>
+        </li>
+          <li class="nav-item">
+          <a class="nav-link" href="http://127.0.0.1:8000/app/">CRUD App</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink1" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Services
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <li><a class="dropdown-item" href="{% url 'flights' %}">Flights</a></li>
+            <li><a class="dropdown-item" href="{% url 'travelpackages' %}">Travel Packages</a></li>
+            <li><a class="dropdown-item" href="{% url 'rentcar' %}">Rent a Car</a></li>
+            <li><a class="dropdown-item" href="#">Add Passengers</a></li>
+              <li><a class="dropdown-item" href="http://127.0.0.1:8000/tourist-reviews/">Add Reviews</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink2" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            PFSD Features
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <li><a class="dropdown-item" href="{% url 'date1' %}">Example of DateTime Module</a></li>
+            <li><a class="dropdown-item" href="{% url 'randomotp' %}">Example of Random Module</a></li>
+            <li><a class="dropdown-item" href="{% url 'getdate1' %}">Date Calulator App</a></li>
+              <li><a class="dropdown-item" href="{% url 'print1' %}">Example of getting input from user</a></li>
+              <li><a class="dropdown-item" href="{% url 'pie_chart' %}">Scientific Computing Libraries in Python </a></li>
+              <li><a class="dropdown-item" href="{% url 'weatherpagecall' %}">Weather APP</a></li>
+              <li><a class="dropdown-item" href="{% url 'contactform' %}">Contact Us</a></li>
+              <li><a class="dropdown-item" href="{% url 'alllink' %}">Site Map</a></li>
+          </ul>
+        </li>
+          </ul>
+        <ul  class="navbar-nav ms-auto">
+<li>
+        {% if user.is_authenticated %}
+        <li class="nav-item">
+        <span class="nav-link">Welcome, {{ user.username }}</span>
+    </li>
+          <li class="nav-item">
+          <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+          </li>
+        {% else %}
+                <li class="nav-item">
+          <a class="nav-link" href="{% url 'signup' %}">Register</a>
+        </li>
+          <li class="nav-item">
+          <a class="nav-link" href="{% url 'login' %}">Login</a>
+        </li>
+        {% endif %}
+
+ </li>
+
+      </ul>
+    </div>
+  </div>
+</nav>
+{% block body %}
+
+{% endblock %}
+<footer id="sticky-footer" class="flex-shrink-0 py-2">
+    <div class="container text-center">
+      <small>Copyright &copy; Dr. BHISHMA. P - K L University. All rights reserved</small>
+    </div>
+  </footer>
+<style>
+  #sticky-footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #F52A2A ; /* Set the desired background color */
+  color: white; /* Set the desired text color */
+  padding: 10px; /* Adjust the padding as needed */
+  font-weight: bold;
+}
+
+</style>
+</body>
+</html>

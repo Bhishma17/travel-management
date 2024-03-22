@@ -1,0 +1,33 @@
+{% extends 'Navbar.html' %}
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+{% block body %}
+<h1>Cheap & Best Flight Search</h1>
+<div class="mb-3 col-6 mx-left">
+  <label for="formGroupExampleInput1" class="form-label">Origin Location</label>
+  <input type="text" class="form-control" id="formGroupExampleInput1" placeholder="Enter the Origin Location">
+</div>
+<div class="mb-3 col-6 mx-left">
+  <label for="formGroupExampleInput2" class="form-label">Destination Location</label>
+  <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Enter the Destination Location">
+</div>
+<div class="mb-3 col-6 mx-left">
+  <label for="formGroupExampleInput3" class="form-label">Departure Date</label>
+  <input type="text" class="form-control" id="formGroupExampleInput3" placeholder="Enter the Departure Date">
+</div>
+<div class="mb-3 col-6 mx-left">
+  <label for="formGroupExampleInput4" class="form-label">Arrival Date</label>
+  <input type="text" class="form-control" id="formGroupExampleInput4" placeholder="Enter the Arrival Date">
+</div>
+<div class="mb-3 col-6 mx-left">
+  <label for="formGroupExampleInput5" class="form-label">Number of Passengers</label>
+  <input type="text" class="form-control" id="formGroupExampleInput5" placeholder="Enter the Number of Passengers">
+</div>
+<br>
+<button type="button" class="btn btn-primary">Primary</button>
+{% endblock %}
+</html>

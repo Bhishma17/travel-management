@@ -1,0 +1,29 @@
+{% extends 'Navbar.html' %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% block body %}
+    <form action="{% if employee.id %}{% url 'remove-emp' employee.id %}{% endif %}" method="POST">
+        {% csrf_token %}
+
+        <br><br>
+        <div class="alert alert-danger" role="alert">
+            Are you sure you want to delete "{{ employee.EmpName }}"?
+        </div>
+
+        <p>
+            <a href="{% url 'show-emp' %}"><-- Return</a>
+        </p>
+
+        <p>
+            <input class="btn btn-danger" type="submit" value="Confirm">
+        </p>
+    </form>
+
+{% endblock %}
+
+</body>
+</html>

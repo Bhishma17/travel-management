@@ -1,0 +1,16 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!-- reviews/templates/reviews/review_list.html -->
+{% for review in reviews %}
+    {{ review.user.username }} -<br> {{ review.created_at }} -<br> {{ review.text }} -<br> {{ review.rating }}
+<!--    <p>{{ review.image.url }}</p>--><br>
+    <img src='{{ review.image.url }}' alt="Review Image">
+{% endfor %}
+
+</body>
+</html>

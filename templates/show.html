@@ -1,0 +1,55 @@
+{% extends 'Navbar.html' %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Information</title>
+
+</head>
+
+<body>
+{% block body %}
+    <h2 style="text-align:center">Employee Information</h2>
+    <table align="center">
+        <thead>
+            <tr>
+                <th>Employee ID</th>
+                <th>Name</th>
+                <th>Gender</th>
+                <th>Email</th>
+                <th>Designation</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for employee in employees %}
+            <tr>
+                <td>{{ employee.EmpId }}</td>
+                <td>{{ employee.EmpName }}</td>
+                <td>{{ employee.EmpGender }}</td>
+                <td>{{ employee.EmpEmail }}</td>
+                <td>{{ employee.EmpDesignation }}</td>
+                <td>
+                    <a href="{% url 'edit-emp' employee.pk %}">Update</a>
+                </td>
+                <td>
+                    <a href="{% url 'remove-emp' employee.pk %}">Delete</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <br><br>
+    <p class="alert alert-danger" role="alert">Do you want to enter more Employees?</p>
+
+    <p>
+        <a href="{% url 'insert-emp' %}">&lt;-- Go To Home Page</a>
+    </p>
+{% endblock %}
+
+</body>
+</html>

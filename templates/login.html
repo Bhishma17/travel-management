@@ -1,0 +1,35 @@
+{% extends 'Navbar.html' %}
+{% load static %}
+<html>
+    <head>
+        <title>
+            LOGIN
+        </title>
+
+    </head>
+    <body>
+    {% block body %}
+        {% if messages %}
+	{% for message in messages %}
+	 {% if message.tags %}  <script>alert("{{ message }}")</script> {% endif %}
+
+	{% endfor %}
+
+{% endif %}
+        <div class="container1">
+            <div class="bodycontainer">
+                <h1>Login</h1>
+                <form method="post" action='login1'>
+                    {% csrf_token %}
+                    <label>Usename</label><br>
+                    <input type="text" name="username" placeholder="username"><br><br>
+                    <label>Password</label><br>
+                    <input type="password" name="password"><br><br>
+                    <button type="submit" name="SUBMIT">SUBMIT</button>
+
+                </form>
+            </div>
+        </div>
+    {% endblock %}
+    </body>
+</html>

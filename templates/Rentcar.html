@@ -1,0 +1,45 @@
+{% extends 'Navbar.html' %}
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+{% block body %}
+<div>
+ <h1>This is Rent Car Page</h1>
+<div class="row" align="center">
+  <div class="col-sm-4">
+    <div class="card border-success">
+     <img class="card-img-top" src="{% static 'images/hatch1.jpeg' %}" alt="Card image cap" width="450" height="300">
+      <div class="card-body">
+        <h5 class="card-title">Rent Hatchback Cars</h5>
+        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+        <center><a href="{% url 'renthatchback' %}"class="btn btn-primary">RENT NOW</a></center>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-4">
+    <div class="card">
+     <img class="card-img-top" src="{% static 'images/sedan.jpeg' %}" alt="Card image cap" width="450" height="300">
+      <div class="card-body">
+        <h5 class="card-title">Rent Sedan Car</h5>
+        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+        <center><a href="#" class="btn btn-primary">RENT NOW</a></center>
+      </div>
+    </div>
+  </div>
+    <div class="col-sm-4">
+    <div class="card">
+     <img class="card-img-top" src="{% static 'images/suv.jpeg' %}" alt="Card image cap" width="450" height="300">
+      <div class="card-body">
+        <h5 class="card-title">Rent SUV Car</h5>
+        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+        <center><a href="#" class="btn btn-primary">RENT NOW</a></center>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+{% endblock %}
+</html>

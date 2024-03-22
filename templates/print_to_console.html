@@ -1,0 +1,36 @@
+{% extends 'Navbar.html' %}
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Printing</title>
+</head>
+<body>
+
+{% block body %}
+<div class="container">
+  <div class="row">
+    <div class="col">
+      First in DOM, ordered last
+        <div>
+    <br>
+  <form method="post" action="{% url 'print_to_console' %}">
+        {% csrf_token %}
+        <label>Enter Text:</label>
+        <input type="text" name="user_input" required>
+        <button type="submit">Submit</button>
+    </form>
+</div>
+    </div>
+    <div class="col">
+      Second in DOM, unordered
+        <h1>{{ user_input }}</h1>
+    </div>
+
+  </div>
+</div>
+
+{% endblock %}
+
+</body>
+</html>

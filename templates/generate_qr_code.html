@@ -1,0 +1,13 @@
+{% load static %}
+<html>
+<head>
+    <title>Generate QR Code</title>
+</head>
+<body>
+    <h2>Payment Request</h2>
+    <p>UPI ID: {{ upi_id }}</p>
+    <p>Amount: {{ amount }}</p>
+    <img src="{% static 'images/KLU1.png' %}" alt="QR Code">
+    <p>Scan the QR code with your UPI-enabled app to make the payment.</p>
+</body>
+</html>

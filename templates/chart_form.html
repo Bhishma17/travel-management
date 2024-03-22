@@ -1,0 +1,28 @@
+{% extends 'Navbar.html' %}
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+{% block body %}
+<div class="container">
+  <div class="row">
+    <div  align="center" class="col">
+        <br> <br>
+<form method="post" action="{% url 'pie_chart' %}">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Generate Pie Chart</button>
+</form>
+    </div>
+      <div  align="center" class="col">
+        <h1>Top Vacation Destinations</h1>
+          <br><br>
+          <img src="{{ chart_image }}" alt="Pie Chart">
+      </div></div>
+</div>
+{% endblock %}
+</html>
+
+

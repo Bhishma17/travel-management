@@ -1,0 +1,20 @@
+{% extends 'Navbar.html' %}
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+{% block body %}
+
+<h2>Current Datetime:</h2>
+<p>{{ datetime_object }}</p>
+
+
+<h2>Calendar for April 2023:</h2>
+<pre>{{ s2 }}</pre>
+
+<h2>Is 2005 a leap year?</h2>
+<p>{{ s1 }}</p>
+{% endblock %}
+</html>

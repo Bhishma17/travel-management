@@ -1,0 +1,21 @@
+{% extends 'Navbar.html' %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!-- register.html -->
+
+
+{% block body %}
+  <h2>Register</h2>
+  <form method="post" action="{% url 'register1' %}">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Register</button>
+</form>
+{% endblock %}
+
+</body>
+</html>

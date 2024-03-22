@@ -1,0 +1,50 @@
+{% extends 'Navbar.html' %}
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+{% block body %}
+<div>
+    <h1 align="center"> This page will display all the links in the web application</h1>
+</div>
+<<br><br>
+<table border="2" align="center">
+<tr>
+    <th>Application</th>
+    <th>Link</th>
+</tr>
+<tr>
+    <td>Date Time</td>
+    <td><a href = http://127.0.0.1:8000/date1/>click Here</a></td>
+</tr>
+    <tr>
+    <td>Random Module</td>
+    <td><a href = http://127.0.0.1:8000/randomotp/>click Here</a></td>
+</tr>
+    <tr>
+    <td>Date Calulator</td>
+    <td><a href = http://127.0.0.1:8000/getdate1/>click Here</a></td>
+</tr>
+        <tr>
+    <td>Printing Machine</td>
+    <td><a href = http://127.0.0.1:8000/p/>click Here</a></td>
+</tr>
+    <tr>
+    <td>Graph Machine</td>
+    <td><a href = http://127.0.0.1:8000/pie_chart/>click Here</a></td>
+</tr>
+</table>
+<style>
+    table {
+        border-collapse: collapse;
+    }
+
+    th, td {
+        border: 2px solid black;
+        padding: 8px; /* Optional: Add padding for better visual appearance */
+    }
+</style>
+{% endblock %}
+</html>

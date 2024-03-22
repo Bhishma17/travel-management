@@ -1,0 +1,11 @@
+{% extends 'Navbar.html' %}
+{% load static %}
+
+{% block body %}
+    <!-- Your other HTML content here -->
+<h3>wrong username password</h3>
+
+     {% if show_alert %}
+        <script src="{% static 'js/alerts.js' %}"></script>
+    {% endif %}
+{% endblock %}

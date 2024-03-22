@@ -1,0 +1,40 @@
+{% extends 'Navbar.html' %}
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+{% block body %}
+<div class="container">
+  <div class="row">
+    <div  align="center" class="col">
+        <br> <br>
+      <h1>Welcome to Deepak's Travel Tourism and Management</h1>
+    <form method ="post" action="{% url 'weatherlogic' %}">
+        {% csrf_token %}
+        <br>
+        <h4>
+            <label>Enter a City Name : </label>
+            <input type="text" name="place">
+            <br><br>
+            <button type="submit" class="btn btn-success btn-lg">Check the Current Weather</button>
+        </h4>
+    </form>
+    </div>
+      <div  align="center" class="col">
+        <h1>Top Vacation Destinations</h1>
+          <br><br>
+          <h1>
+              {% if error_message %}
+        <p>{{ error_message }}</p>
+    {% else %}
+        <p>City: {{ city }}</p>
+        <p>Temperature: {{ temperature1 }} &#8451;</p>
+        <p>Humidity: {{ humidity }}%</p>
+    {% endif %}
+          </h1>
+      </div></div>
+</div>
+{% endblock %}
+</html>
